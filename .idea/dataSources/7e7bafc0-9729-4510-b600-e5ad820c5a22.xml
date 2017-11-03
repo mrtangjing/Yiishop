@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="yiishop@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="yiishop">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="class"/>
+    <schema id="4" parent="1" name="information_schema"/>
+    <schema id="5" parent="1" name="mysql"/>
+    <schema id="6" parent="1" name="new"/>
+    <schema id="7" parent="1" name="performance_schema"/>
+    <schema id="8" parent="1" name="php0712"/>
+    <schema id="9" parent="1" name="shujuku520"/>
+    <schema id="10" parent="1" name="tan"/>
+    <schema id="11" parent="1" name="tang"/>
+    <schema id="12" parent="1" name="user"/>
+    <schema id="13" parent="1" name="yii2"/>
+    <table id="14" parent="2" name="brand"/>
+    <column id="15" parent="14" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="16" parent="14" name="name">
+      <Position>2</Position>
+      <Comment>品牌名称</Comment>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="17" parent="14" name="intor">
+      <Position>3</Position>
+      <Comment>简介</Comment>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="18" parent="14" name="logo">
+      <Position>4</Position>
+      <Comment>logo</Comment>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="19" parent="14" name="srot">
+      <Position>5</Position>
+      <Comment>排序</Comment>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="20" parent="14" name="status">
+      <Position>6</Position>
+      <Comment>状态</Comment>
+      <DataType>smallint(255)|0</DataType>
+    </column>
+    <column id="21" parent="14" name="create_time">
+      <Position>7</Position>
+      <Comment>品牌创建时间</Comment>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="22" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
