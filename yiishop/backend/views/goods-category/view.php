@@ -1,12 +1,11 @@
 <?php
 use leandrogehlen\treegrid\TreeGrid;
-
 ?>
 
-<h1>商品分类列表</h1>
+    <h1>商品分类列表</h1>
 
 <?php
-  echo   \yii\bootstrap\Html::a('添加分类',['add'],['class'=>'btn btn-success']);
+echo   \yii\bootstrap\Html::a('添加分类',['add'],['class'=>'btn btn-success']);
 
 echo  TreeGrid::widget([
     'dataProvider' =>$category,
@@ -20,15 +19,7 @@ echo  TreeGrid::widget([
         'id',
         'name',
         'parent_id',
-//        [
-//                'class' => 'yii\grid\ActionColumn',
-//
-//            ],
-        [
-                'class'=>\backend\components\TreeColumn::className(),
-
-        ],
-
+        ['class' => 'yii\grid\ActionColumn']
     ]
 ]);
 

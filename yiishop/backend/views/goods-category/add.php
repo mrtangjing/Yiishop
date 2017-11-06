@@ -1,7 +1,7 @@
 <?php
 $from =\yii\bootstrap\ActiveForm::begin();
 echo $from->field($model,'name');
-echo $from->field($model,'parent_id');
+echo $from->field($model,'parent_id')->hiddenInput();
 
 echo  \liyuze\ztree\ZTree::widget([
     'setting' => '{

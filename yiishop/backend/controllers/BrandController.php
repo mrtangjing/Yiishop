@@ -135,26 +135,20 @@ class BrandController extends Controller
         $config = [
             'accessKey' => 'nr0J_R5F7uBc52ud-BbPV055TF_bcvpPTH4zyTWV',//ak
             'secretKey' => '4kgoBSM9JUeaD2RkTFsgxQytH_ngSmcuSAZf4qKR',//sk
-            'domain' => 'http://oyvp0dnjb.bkt.clouddn.com',//七牛云临时域名
+            'domain' => 'http://oyvp0dnjb.bkt.clouddn.com',//七牛云临时域名---
             'bucket' => 'yiishop',//七牛云保存图片库的名称-----区分大小写
             'area' => Qiniu::AREA_HUADONG //华东地区
         ];
 //        var_dump($_FILES['file']['tmp_name']);die();
         //创建七牛云对象
         $qiniu = new Qiniu($config);
-
-
         $key = time();
        // var_dump($_FILES['file']['tmp_name']);exit;
         //文件上传七牛云
         $qiniu->uploadFile($_FILES['file']['tmp_name'], $key);
-
-
-
        // var_dump($qiniu);exit;
         //获取七牛云图片保存地址
         $url = $qiniu->getLink($key);
-
         //拼装图片路径
         $info=[
             'code'=>0,
@@ -163,7 +157,8 @@ class BrandController extends Controller
         ];
         //将拼装的路径传到页面显示
         echo json_encode($info);
-//        {"code": 0, "url": "http://domain/图片地址", "attachment": "图片地址"}
+        //前端需要的数据格式
+        //        {"code": 0, "url": "http://domain/图片地址", "attachment": "图片地址"}
     }
 
 }
