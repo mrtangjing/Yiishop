@@ -142,7 +142,7 @@ class BrandController extends Controller
 //        var_dump($_FILES['file']['tmp_name']);die();
         //创建七牛云对象
         $qiniu = new Qiniu($config);
-        $key = time();
+        $key = microtime(true);
        // var_dump($_FILES['file']['tmp_name']);exit;
         //文件上传七牛云
         $qiniu->uploadFile($_FILES['file']['tmp_name'], $key);
