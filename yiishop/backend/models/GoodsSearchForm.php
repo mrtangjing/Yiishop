@@ -14,14 +14,14 @@ use yii\base\Model;
 class GoodsSearchForm extends Model
 {
 
-    public $keyword;
+    public $keywords;
     public $minPrice;
     public $maxPrice;
     public function rules()
     {
         return [
             [['minPrice','maxPrice'],'number'],
-            ['keyword','safe']
+            ['keywords','safe']
         ];
     }
 }

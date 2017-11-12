@@ -10,23 +10,38 @@ use yii\widgets\LinkPager;
         <?=\yii\bootstrap\Html::a('添加商品',['add'],['class'=>'btn btn-success'])?>
     </div>
         <div class="col-md-10">
+            <form class="form-inline pull-right">
+                <div class="form-group">
+<!--                    <label for="exampleInputName2">Name</label>-->
+                    <input type="text" class="form-control"  name="minPrice" placeholder="最低价格" size="10">
+                </div>
 
-            <?php
-            $searchForm=new \backend\models\GoodsSearchForm();
-            $form=\yii\bootstrap\ActiveForm::begin([
-                'method' => 'get',
-                'options' => ['class'=>"form-inline pull-right"]
-            ]);
-            echo $form->field($searchForm,'minPrice')->label(false)->textInput(['size'=>5]);
-            echo "-";
-            echo $form->field($searchForm,'maxPrice')->label(false)->textInput(['size'=>5,'placeholder'=>"最高价"]);
-            echo " ";
-            echo $form->field($searchForm,'keyword')->label(false);
-            echo " ";
-            echo \yii\bootstrap\Html::submitButton("搜索",['class'=>'btn btn-success','style'=>"margin-bottom:8px"]);
-            \yii\bootstrap\ActiveForm::end();
-            ?>
-            `</div>
+                <div class="form-group">
+<!--                    <label for="exampleInputName2">Name</label>-->
+                    <input type="text" class="form-control" name="maxPrice" placeholder="最高价格" size="10">
+                </div>
+                <div class="form-group">
+<!--                    <label for="exampleInputEmail2">Email</label>-->
+                    <input type="text" class="form-control" name="keywords" placeholder="请输入搜索关键字" size="">
+                </div>
+                <button type="submit" class="btn btn-success">搜搜</button>
+            </form>
+<?php
+//            $searchForm=new \backend\models\GoodsSearchForm();
+//            $form=\yii\bootstrap\ActiveForm::begin([
+//                'method' => 'get',
+//                'options' => ['class'=>"form-inline pull-right"]
+//            ]);
+//            echo $form->field($searchForm,'minPrice')->label(false)->textInput(['size'=>5,'placeholder'=>"理想价格"]);
+//            echo "-";
+//            echo $form->field($searchForm,'maxPrice')->label(false)->textInput(['size'=>5,'placeholder'=>"最高价格"]);
+//            echo " ";
+//            echo $form->field($searchForm,'keywords')->label(false)->textInput(['placeholder'=>"请输入搜索关键字"]);
+//            echo " ";
+//            echo \yii\bootstrap\Html::submitButton("搜索",['class'=>'btn btn-success','style'=>"margin-bottom:8px"]);
+//            \yii\bootstrap\ActiveForm::end();
+//            ?>
+            </div>
     </div>
 
 <table class="table table-hover">
