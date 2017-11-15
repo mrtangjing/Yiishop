@@ -38,8 +38,15 @@ class GoodsCategoryController extends \yii\web\Controller
                 }else{
                     //先根据pid查询数据
                     $cate = GoodsCategory::findOne(['id'=>$cateModel->parent_id]);
-                    //数据保存在对应的父id下
-                    $cateModel->prependTo($cate);
+                    //判断增加到三级目录
+                    if($cate->depth > 1){
+                        Yii::$app->session->setFlash('danger','此目录不能再添加子目录');
+                        //刷新页面
+                        return $this->refresh();
+                    }else{
+                        //数据保存在对应的父id下
+                        $cateModel->prependTo($cate);
+                    }
                     //添加成功后提示信息
                     Yii::$app->session->setFlash('success','添加成功');
                     //添加成功后跳转首页面

@@ -2,6 +2,7 @@
 /* @var $this yii\web\View */
 ?>
 <h1>用户列表</h1>
+<?= \yii\bootstrap\Html::a('添加用户',['add'], ['class' => 'btn btn-success']) ?>
 <table class="table table-hover">
     <tr>
         <th>用户名</th>

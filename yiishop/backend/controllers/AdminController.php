@@ -36,26 +36,25 @@ class AdminController extends \yii\web\Controller
             //创建用户的时间
             $admin->add_time = time();
             $admin->save();
-            //处理角色
-            if($data["Admin"]['roles']){
-
-                foreach ($data["Admin"]['roles'] as $v){
-                    //获取角色
-                $role = $authManager->getRole($v);
-                    //保存角色
-                    $authManager->assign($role,$admin->id);
-                }
-            }
+//            //处理角色
+//            if ($data["Admin"]['roles']) {
+//                foreach ($data["Admin"]['roles'] as $v) {
+//                    //获取角色
+//                    $role = $authManager->getRole($v);
+//                    //保存角色
+//                    $authManager->assign($role, $admin->id);
+//                }
+//            }
             //提示信息
             \Yii::$app->session->setFlash('siccess', '添加' . $admin->username . '成功');
             return $this->redirect(['login']);
         }
         //获取所有角色
         $roles = $authManager->getRoles();
-            //调用ArrayHelper方法用于dropDownList
-       $roles= ArrayHelper::map($roles,'name','description');
+        //调用ArrayHelper方法用于dropDownList
+        $roles = ArrayHelper::map($roles, 'name', 'description');
 
-        return $this->render('add', compact('admin','roles'));
+        return $this->render('add', compact('admin', 'roles'));
 
     }
 
@@ -74,30 +73,33 @@ class AdminController extends \yii\web\Controller
             //对密码进行hash 加盐加密
             $admin->password = \Yii::$app->security->generatePasswordHash($admin->password);
             //创建用户的时间
-            $admin->add_time = time();
+//            $admin->add_time = time();
             $admin->save();
-            \Yii::$app->session->setFlash('siccess', '修改' . $admin->username . '成功');
+            \Yii::$app->session->setFlash('success', '修改' . $admin->username . '成功');
             return $this->redirect(['index']);
         }
 
-        $admin->password="";
+        $admin->password = "";
         return $this->render('add', compact('admin'));
 
     }
+
     /**
      * @return 删除用户信息
      */
     public function actionDel($id)
     {
-        if(Admin::findOne($id)->delete()){
-            \Yii::$app->session->setFlash('success','删除成功');
+        if (Admin::findOne($id)->delete()) {
+            \Yii::$app->session->setFlash('success', '删除成功');
             return $this->redirect(['index']);
         }
 
     }
+
     //用户登录
     public function actionLogin()
     {
+        //判断是不是游客
         if (!\Yii::$app->user->isGuest) {
             return $this->goHome();
         }
@@ -128,28 +130,28 @@ class AdminController extends \yii\web\Controller
                         return $this->redirect(['index']);
                     } else {
                         //用户密码错误
-                        $admin->addError('danger', '用户密码错误');
+                        $admin->addError('danger','密码错误');
+
                     }
                 } else {
+//                    var_dump($adminModel->addError('danger', $admin->username . '不存在'));die();
                     //用户名不存在
-                    $adminModel->addError('danger', $admin->username . '不存在');
+                    $admin->addError('danger', $admin->username . '不存在');
                 }
-            } else {
-                //调试用的打印错误信息
-                var_dump($admin->getErrors());
-                die();
             }
         }
         return $this->render('login', ['login' => $admin]);
 
     }
+
     //退出登录
-    public function actionLogOut(){
+    public function actionLogout()
+    {
         //调用User主键退出登录
         \Yii::$app->user->logout();
+//        echo 111;exit;
         //跳转首页
-        return $this->redirect(['index']);
-
+        return $this->redirect(['login']);
 
 
     }

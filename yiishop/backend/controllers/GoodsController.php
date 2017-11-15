@@ -168,7 +168,8 @@ class GoodsController extends \yii\web\Controller
                 $goodsIntro->goods_id = $goods->id;
                 $goodsIntro->content = $data["GoodsIntro"]["content"];
                 $goodsIntro->update();
-
+            //修改图片提交前先根据id删除数据库已有的图片
+                GoodsGallery::deleteAll(['goods_id'=>$goods->id]);
 //商品图片表修改表数据操作保存
                 foreach ($data['Goods']["imgPath"] as $v) {
                     $goodsGallery = new GoodsGallery();

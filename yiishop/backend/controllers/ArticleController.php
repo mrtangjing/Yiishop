@@ -66,8 +66,9 @@ class ArticleController extends \yii\web\Controller
                 return $this->redirect(['index']);
             }
         }
-
-        return $this->render('add',['artic' => $article, 'detail' => $detail]);
+        //输出到dropDownList
+        $category= yii\helpers\ArrayHelper::map(ArticleCategory::find()->all(),'id','name');
+        return $this->render('add',['artic' => $article, 'detail' => $detail,'cate'=>$category]);
 
     }
     //删除文章

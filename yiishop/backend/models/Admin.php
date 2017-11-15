@@ -39,7 +39,7 @@ class Admin extends \yii\db\ActiveRecord implements IdentityInterface
     {
         return [
             [['username','password'],'required'],
-            ['username','unique'],
+//            ['username','unique'],
             [['auth_kye_time', 'add_time', 'last_login_time'], 'integer'],
             [['username'], 'string', 'max' => 100],
             [['password'], 'string', 'max' => 64],
