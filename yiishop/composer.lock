@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "6b983db2f3356852bb1a63095a50611c",
+    "content-hash": "373b7ebabd0b5c3a85651a1a2f3f3b7f",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -474,6 +474,41 @@
             "time": "2017-06-03T02:28:16+00:00"
         },
         {
+            "name": "flc/dysms",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/flc1125/dysms.git",
+                "reference": "a60645c6b35a15fe7fed6282784d2094368fc8f5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/flc1125/dysms/a60645c6b35a15fe7fed6282784d2094368fc8f5.zip",
+                "reference": "a60645c6b35a15fe7fed6282784d2094368fc8f5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Flc\\Dysms\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "阿里短信-适用Laravel、Yii、Thinkphp等任何PHP项目...",
+            "keywords": [
+                "dysms",
+                "flc",
+                "阿里短信"
+            ],
+            "time": "2017-08-12T03:35:57+00:00"
+        },
+        {
             "name": "flyok666/yii2-qiniu",
             "version": "1.0.2",
             "source": {
@@ -740,6 +775,90 @@
                 "yii"
             ],
             "time": "2017-10-04T02:54:53+00:00"
+        },
+        {
+            "name": "mrgoon/aliyun-sms",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MissMyCat/aliyun-sms.git",
+                "reference": "521a4f95e556e8833be31bf3aa2a3d18c9b1abbe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/MissMyCat/aliyun-sms/521a4f95e556e8833be31bf3aa2a3d18c9b1abbe.zip",
+                "reference": "521a4f95e556e8833be31bf3aa2a3d18c9b1abbe",
+                "shasum": ""
+            },
+            "require": {
+                "mrgoon/aliyun-sms-sdk": "1.1.*",
+                "php": ">5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Mrgoon\\AliSms\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "mrgoon",
+                    "email": "mrgoon@foxmail.com"
+                }
+            ],
+            "description": "阿里云短信服务php调用代码",
+            "keywords": [
+                "Aliyun-Sms",
+                "aliyun",
+                "sdk"
+            ],
+            "time": "2017-10-19T08:16:16+00:00"
+        },
+        {
+            "name": "mrgoon/aliyun-sms-sdk",
+            "version": "v1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MissMyCat/aliyun-sms-sdk.git",
+                "reference": "4f7da60f8d4351d05640d89a5a4f431ece04156c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/MissMyCat/aliyun-sms-sdk/4f7da60f8d4351d05640d89a5a4f431ece04156c.zip",
+                "reference": "4f7da60f8d4351d05640d89a5a4f431ece04156c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Mrgoon\\AliyunSmsSdk\\": "aliyun-php-sdk-core/",
+                    "Mrgoon\\Dysmsapi\\Request\\V20170525\\": "Dysmsapi/Request/V20170525"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "mrgoon",
+                    "email": "mrgoon@foxmail.com"
+                }
+            ],
+            "description": "阿里云短信服务核心代码",
+            "keywords": [
+                "Aliyun-Sms",
+                "aliyun",
+                "sdk"
+            ],
+            "time": "2017-10-19T03:49:51+00:00"
         },
         {
             "name": "rmrevin/yii2-fontawesome",
